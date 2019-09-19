@@ -3,6 +3,7 @@ package com.training.leave.app.model;
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.Date;
+import java.util.Set;
 
 public class Employee implements Serializable {
 
@@ -15,6 +16,15 @@ public class Employee implements Serializable {
 	private Date empDoj;
 	private int leaveBalance;
 	private int empManagerId;
+	private Set<Leaves> leaves;
+
+	public Set<Leaves> getLeaves() {
+		return leaves;
+	}
+
+	public void setLeaves(Set<Leaves> leaves) {
+		this.leaves = leaves;
+	}
 
 	public long getEmpId() {
 		return empId;
