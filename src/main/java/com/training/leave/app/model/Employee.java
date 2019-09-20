@@ -5,6 +5,8 @@ import java.math.BigInteger;
 import java.util.Date;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class Employee implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -13,6 +15,7 @@ public class Employee implements Serializable {
 	private BigInteger phone;
 	private String empDept;
 	private String empEmail;
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date empDoj;
 	private int leaveBalance;
 	private int empManagerId;
@@ -88,6 +91,13 @@ public class Employee implements Serializable {
 
 	public void setEmpManagerId(int empManagerId) {
 		this.empManagerId = empManagerId;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [empId=" + empId + ", empName=" + empName + ", phone=" + phone + ", empDept=" + empDept
+				+ ", empEmail=" + empEmail + ", empDoj=" + empDoj + ", leaveBalance=" + leaveBalance + ", empManagerId="
+				+ empManagerId + ", leaves=" + leaves + "]";
 	}
 
 }

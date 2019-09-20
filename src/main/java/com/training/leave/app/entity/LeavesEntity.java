@@ -108,14 +108,6 @@ public class LeavesEntity implements Serializable {
 		this.managerComments = managerComments;
 	}
 
-//	public long getEmpId() {
-//		return empId;
-//	}
-//
-//	public void setEmpId(long empId) {
-//		this.empId = empId;
-//	}
-
 	public String getReason() {
 		return reason;
 	}

@@ -1,5 +1,6 @@
 package com.training.leave.app.controller;
 
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +36,7 @@ public class EmployeeController {
 		return new ResponseEntity<>(empService.getEmployeeDetails(id), HttpStatus.OK);
 	}
 
-	@RequestMapping(method = RequestMethod.GET, path = "/employeeId/leaves/{empId}")
+	@RequestMapping(method = RequestMethod.GET, path = "/leaves/{empId}")
 	@CrossOrigin
 	@ApiResponses(value = {
 			@ApiResponse(code = 400, message = "Handled Exception", response = LeavesExceptionResolver.class),
@@ -45,4 +46,13 @@ public class EmployeeController {
 		return new ResponseEntity<>(empService.getEmployeeLeavess(empId), HttpStatus.OK);
 	}
 
+	@RequestMapping(method = RequestMethod.GET, path = "/reportees/{id}")
+	@CrossOrigin
+	@ApiResponses(value = {
+			@ApiResponse(code = 400, message = "Handled Exception", response = LeavesExceptionResolver.class),
+			@ApiResponse(code = 500, message = "Handled Exception", response = LeavesExceptionResolver.class),
+			@ApiResponse(code = 200, message = "OK", response = Employee.class, responseContainer = "List") })
+	public ResponseEntity<List<Employee>> getReportees(@PathVariable Integer id) throws Exception {
+		return new ResponseEntity<>(empService.getReportees(id), HttpStatus.OK);
+	}
 }

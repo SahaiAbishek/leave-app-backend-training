@@ -10,3 +10,4 @@ insert into LEAVE_HISTORY values (2,1,'2019-02-01','2019-01-02','APPROVED','2019
 insert into LEAVE_HISTORY values (3,5,'2019-02-10','2019-02-15','APPROVED','2019-01-15','Manager Approved',1,'PTO','EL');
 insert into LEAVE_HISTORY values (4,1,'2019-03-03','2019-03-04','APPROVED','2019-03-01','Manager Approved',1,'PTO','EL');
 insert into LEAVE_HISTORY values (5,2,'2019-03-06','2019-03-08','APPROVED','2019-03-02','Manager Approved',5,'PTO','EL');
+insert into LEAVE_HISTORY values (6,2,'2019-03-06','2019-03-08','APPROVED','2019-03-02','Manager Approved',6,'PTO','EL');

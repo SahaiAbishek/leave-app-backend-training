@@ -1,6 +1,8 @@
 package com.training.leave.app.service;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -25,7 +27,7 @@ public class EmployeeService {
 		Optional<com.training.leave.app.entity.EmployeeEntity> optional = empRepo.findById(id);
 		if (null != optional) {
 			BeanUtils.copyProperties(optional.get(), target);
-			
+
 			Set<Leaves> targetLeaves = new HashSet<>();
 			EmployeeEntity employeeEntity = optional.get();
 			Set<LeavesEntity> leaves = employeeEntity.getLeaves();
@@ -60,6 +62,20 @@ public class EmployeeService {
 			return new HashSet<>();
 		}
 
+	}
+
+	public List<Employee> getReportees(int empId) throws Exception {
+		List<Employee> targets = new ArrayList<>();
+		List<EmployeeEntity> sources = empRepo.findByEmpManagerId(empId);
+		if (null != sources) {
+			for (EmployeeEntity source : sources) {
+				Employee employee = getEmployeeDetails(source.getEmpId());
+				targets.add(employee);
+			}
+			return targets;
+		} else {
+			throw new Exception("No employees found with Employeed ID : " + empId);
+		}
 	}
 
 }

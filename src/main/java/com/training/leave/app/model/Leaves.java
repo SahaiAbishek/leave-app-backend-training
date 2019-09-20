@@ -3,14 +3,19 @@ package com.training.leave.app.model;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class Leaves implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private long leaveId;
 	private long numberOfDays;
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date startDate;
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date endDate;
 	private String leaveStatus;
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date appliedOn;
 	private String managerComments;
 	private long empId;
@@ -33,36 +38,12 @@ public class Leaves implements Serializable {
 		this.numberOfDays = numberOfDays;
 	}
 
-	public Date getStartDate() {
-		return startDate;
-	}
-
-	public void setStartDate(Date startDate) {
-		this.startDate = startDate;
-	}
-
-	public Date getEndDate() {
-		return endDate;
-	}
-
-	public void setEndDate(Date endDate) {
-		this.endDate = endDate;
-	}
-
 	public String getLeaveStatus() {
 		return leaveStatus;
 	}
 
 	public void setLeaveStatus(String leaveStatus) {
 		this.leaveStatus = leaveStatus;
-	}
-
-	public Date getAppliedOn() {
-		return appliedOn;
-	}
-
-	public void setAppliedOn(Date appliedOn) {
-		this.appliedOn = appliedOn;
 	}
 
 	public String getManagerComments() {
@@ -95,6 +76,30 @@ public class Leaves implements Serializable {
 
 	public void setLeaveType(String leaveType) {
 		this.leaveType = leaveType;
+	}
+
+	public Date getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
+	}
+
+	public Date getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
+
+	public Date getAppliedOn() {
+		return appliedOn;
+	}
+
+	public void setAppliedOn(Date appliedOn) {
+		this.appliedOn = appliedOn;
 	}
 
 }
