@@ -37,6 +37,19 @@ public class LeavesService {
         }
     }
 
+    public boolean updateLeave(long  leaveId,String leaveStatus) throws  Exception{
+        try{
+            Optional<LeavesEntity> optionalLeavesEntity =  repo.findById(leaveId);
+            LeavesEntity leavesEntity =  optionalLeavesEntity.get();
+            leavesEntity.setLeaveStatus(leaveStatus);
+            repo.save(leavesEntity);
+            return true;
+        }catch (Exception ex){
+            ex.printStackTrace();;
+            throw ex;
+        }
+    }
+
     public boolean saveLeave(Leaves leaves) throws Exception {
         try {
             LeavesEntity leavesEntity = new LeavesEntity();
