@@ -1,6 +1,6 @@
 CREATE TABLE `EMPLOYEE` 
 (  
-	`EMP_ID` int(11),  
+	`EMP_ID`  integer not null auto_increment,
 	`EMP_NAME` char(20) NOT NULL,  
 	`EMP_PHONE` bigint(20) DEFAULT NULL,  
 	`EMP_DEPT` varchar(20),  
@@ -15,14 +15,14 @@ CREATE TABLE `EMPLOYEE`
 
 CREATE TABLE `LEAVE_HISTORY` 
 (  
-	`LEAVE_ID` int(10) unsigned NOT NULL AUTO_INCREMENT,  
+	`LEAVE_ID` integer not null AUTO_INCREMENT,
 	`NUMBER_OF_DAYS` int(11) DEFAULT NULL,  
 	`START_DATE` date NOT NULL,  
 	`END_DATE` date NOT NULL,  
 	`LEAVE_STATUS` enum('APPROVED','PENDING','DENIED') DEFAULT NULL,  
 	`APPLIED_ON` date NOT NULL,  
 	`MANAGER_COMMENTS` char(50) DEFAULT NULL,  
-	`EMP_ID` int(11) NOT NULL,  
+	`EMP_ID` integer ,
 	`REASONS` varchar(50) NOT NULL,  
 	`LEAVE_TYPE` enum('EL') DEFAULT NULL,  
 	PRIMARY KEY (`LEAVE_ID`), 

@@ -21,7 +21,7 @@ public class LeavesEntity implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "LEAVE_ID")
-	private long leaveId;
+	private Long leaveId;
 	@Column(name = "NUMBER_OF_DAYS")
 	private long numberOfDays;
 	@Column(name = "START_DATE")
@@ -44,84 +44,83 @@ public class LeavesEntity implements Serializable {
 	@JoinColumn(name = "EMP_ID")
 	private EmployeeEntity employee;
 
-	public EmployeeEntity getEmployee() {
-		return employee;
-	}
+    public Long getLeaveId() {
+        return leaveId;
+    }
 
-	public void setEmployee(EmployeeEntity employee) {
-		this.employee = employee;
-	}
+    public void setLeaveId(Long leaveId) {
+        this.leaveId = leaveId;
+    }
 
-	public long getLeaveId() {
-		return leaveId;
-	}
+    public long getNumberOfDays() {
+        return numberOfDays;
+    }
 
-	public void setLeaveId(long leaveId) {
-		this.leaveId = leaveId;
-	}
+    public void setNumberOfDays(long numberOfDays) {
+        this.numberOfDays = numberOfDays;
+    }
 
-	public long getNumberOfDays() {
-		return numberOfDays;
-	}
+    public Date getStartDate() {
+        return startDate;
+    }
 
-	public void setNumberOfDays(long numberOfDays) {
-		this.numberOfDays = numberOfDays;
-	}
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
 
-	public Date getStartDate() {
-		return startDate;
-	}
+    public Date getEndDate() {
+        return endDate;
+    }
 
-	public void setStartDate(Date startDate) {
-		this.startDate = startDate;
-	}
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
+    }
 
-	public Date getEndDate() {
-		return endDate;
-	}
+    public String getLeaveStatus() {
+        return leaveStatus;
+    }
 
-	public void setEndDate(Date endDate) {
-		this.endDate = endDate;
-	}
+    public void setLeaveStatus(String leaveStatus) {
+        this.leaveStatus = leaveStatus;
+    }
 
-	public String getLeaveStatus() {
-		return leaveStatus;
-	}
+    public Date getAppliedOn() {
+        return appliedOn;
+    }
 
-	public void setLeaveStatus(String leaveStatus) {
-		this.leaveStatus = leaveStatus;
-	}
+    public void setAppliedOn(Date appliedOn) {
+        this.appliedOn = appliedOn;
+    }
 
-	public Date getAppliedOn() {
-		return appliedOn;
-	}
+    public String getManagerComments() {
+        return managerComments;
+    }
 
-	public void setAppliedOn(Date appliedOn) {
-		this.appliedOn = appliedOn;
-	}
+    public void setManagerComments(String managerComments) {
+        this.managerComments = managerComments;
+    }
 
-	public String getManagerComments() {
-		return managerComments;
-	}
+    public String getReason() {
+        return reason;
+    }
 
-	public void setManagerComments(String managerComments) {
-		this.managerComments = managerComments;
-	}
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
 
-	public String getReason() {
-		return reason;
-	}
+    public String getLeaveType() {
+        return leaveType;
+    }
 
-	public void setReason(String reason) {
-		this.reason = reason;
-	}
+    public void setLeaveType(String leaveType) {
+        this.leaveType = leaveType;
+    }
 
-	public String getLeaveType() {
-		return leaveType;
-	}
+    public EmployeeEntity getEmployee() {
+        return employee;
+    }
 
-	public void setLeaveType(String leaveType) {
-		this.leaveType = leaveType;
-	}
-
+    public void setEmployee(EmployeeEntity employee) {
+        this.employee = employee;
+    }
 }
