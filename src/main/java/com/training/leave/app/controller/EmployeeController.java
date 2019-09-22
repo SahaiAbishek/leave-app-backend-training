@@ -66,13 +66,13 @@ public class EmployeeController {
         return new ResponseEntity<>(leavesService.saveLeave(empId,leaves), HttpStatus.OK);
     }
 
-    @RequestMapping(method = RequestMethod.POST, path = "/leaves/{leaveId}/{status}")
+    @RequestMapping(method = RequestMethod.PUT, path = "/leave/{leaveId}")
     @CrossOrigin
     @ApiResponses(value = {
             @ApiResponse(code = 400, message = "Handled Exception", response = LeavesExceptionResolver.class),
             @ApiResponse(code = 500, message = "Handled Exception", response = LeavesExceptionResolver.class),
             @ApiResponse(code = 200, message = "OK", response = Boolean.class)})
-    public ResponseEntity<Boolean> updateLeave(@PathVariable Long leaveId,@PathVariable String status) throws Exception {
+    public ResponseEntity<Boolean> updateLeave(@PathVariable Long leaveId,@RequestBody String status) throws Exception {
         return new ResponseEntity<>(leavesService.updateLeave(leaveId,status), HttpStatus.OK);
     }
 }
